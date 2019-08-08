@@ -1,21 +1,16 @@
 package jp.ne.tin.calculator;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.FlowLayout;
+import javax.swing.border.EmptyBorder;
+
 import net.miginfocom.swing.MigLayout;
-import javax.swing.BoxLayout;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
 
 public class EntryPointBefore extends JFrame {
 
@@ -107,7 +102,7 @@ public class EntryPointBefore extends JFrame {
 	 */
 	private void createButtons() {
 		
-		button_0 = new JButton("0");
+		button_0 = new JButton("");
 		contentPane.add(button_0, "cell 0 4");
 		button_0.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

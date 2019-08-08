@@ -105,6 +105,8 @@ public class EntryPoint extends JFrame implements ActionListener {
 	 */
 	private void createButtons() {
 
+		// 20190808_今回の共通化でDesignにボタンはなくなり、論理ボタンになります。
+		
 		// ---------- 数字ボタン ----------------
 		JButton[] btns = new JButton[] { 
 				button_0
@@ -129,7 +131,7 @@ public class EntryPoint extends JFrame implements ActionListener {
 			String txt = "cell";
 			if (i == 0) {
 				
-				txt += String.valueOf(i) + " 4";
+				txt += btnTxt + " 4";
 				
 			} else if (i < 4) {
 
@@ -299,7 +301,18 @@ public class EntryPoint extends JFrame implements ActionListener {
 
 		JButton btn = (JButton) e.getSource();
 		String btnTxt = btn.getText();
-		textField.setText(textField.getText() + btnTxt);
+		
+		try {
+			Integer.parseInt(btnTxt);	// 数字でないと例外をスローします。
+			textField.setText(textField.getText() + btnTxt);
+
+		} catch (NumberFormatException ex) {
+
+			// 数字ではないので機能ボタンであることは判明します。
+			
+		}
+		
+		
 
 	}
 
